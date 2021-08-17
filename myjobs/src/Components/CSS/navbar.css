@@ -1,0 +1,23 @@
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+.login {
+    padding: 10px;
+    border: 2px solid #43AFFF;
+    border-radius: 5px;
+    background-color: #33557E;
+}
+
+.light-blue {
+    color: #43AFFF;
+}
+
+nav{
+    background-color: #2F3D5E;
+}

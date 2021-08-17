@@ -1,0 +1,42 @@
+.main-body {
+    border: 2px solid black;
+    width: 40%;
+    margin: auto;
+    padding: 3%;
+    border-radius: 15px;
+}
+label{
+    padding: 5px 0;
+}
+
+.input-box{
+    width: 100%;
+}
+.input-box:focus {
+   outline-color:  #43AFFF
+}
+
+.error {
+    text-align: right;
+    color:red;
+}
+
+.link-form {
+    color: #43AFFF ;
+    display: inline;
+}
+
+.link-form:hover{
+    color: #43AFFF ;
+}
+
+.form-end-div {
+    padding: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.password {
+    display: flex;
+    
+}

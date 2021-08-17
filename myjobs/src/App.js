@@ -1,20 +1,35 @@
-
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './Components/Navbar';
-import DarkUpperPart from './Components/IntroDark';
-import LightLowerPart from './Components/IntroLight';
+import Main from './Components/Main';
 
-import Form from './Components/SignIn';
+import Signin from './Components/SignIn';
+import ForgotPass from './Components/ForgotPass';
+import ResetPass from './Components/ResetPass';
+import Jobpost from './Components/PostJob';
+import Signup from './Components/Signup';
+
 
 function App() {
   return (
     <div className="App">
-      <Form/>
+      <Router>
+        <Navbar />
+        <Main />
 
-      {/* <Navbar/>
-      <DarkUpperPart/>
-      <LightLowerPart/> */}
+        <Switch>
+          {/* <Form /> */}
+          {/* <ForgotPass/> */}
+          {/* <ResetPass/> */}
+          {/* <Jobpost/> */}
+          {/* <Signup/> */}
+          <Route path="/login" exact component={Signin}/>
+          <Route path="/signup" exact component={Signup}/>
+          <Route path="/forgot-pass" exact component={ForgotPass}/>
+          <Route path="/reset-pass" exact component={ResetPass}/>
+        </Switch>
+      </Router>
     </div>
   );
 }

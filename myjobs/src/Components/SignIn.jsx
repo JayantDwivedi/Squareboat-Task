@@ -9,19 +9,25 @@ export default function SignIn() {
     const [error, setError] = useState();
 
     const handleSubmit = () => {
-        if(validate()) {
-            console.log(email);
-            console.log(pass);
+        if(validate(email,pass)) {
+            alert(email + " " + pass);
+            setEmail("");
+            setPass("");
+            setError("");
         }
     }
 
     const emailRegex = /\S+@\S+\.\S+/;
 
-    function validate(){
-        if (email.length < 2 || pass.length < 1) {
-            setError("Incorrect email or password")
-        }else {
-            return;
+    function validate(email,pass){
+        if (email === "" || email === undefined || pass === "" || pass === undefined) {
+            setError("All feild is mandatory");
+        }
+        else if (!emailRegex.test(email)) {
+            setError("Enter a valid email");
+        }
+        else {
+            return true;
         }
     }
 
@@ -29,11 +35,11 @@ export default function SignIn() {
 
 
     return (
-        <form className="main-body">
+        <div className="main-body">
             <h3>Login</h3>
             <label htmlFor="Email address">Email address</label>
             <br />
-            <input className="input-box py-2" type="text" placeholder="Enter your email" onChange={(e) => { setEmail(e.target.value) }} />
+            <input className="input-box p-2 my-3 rounded" value={email} type="text" placeholder="Enter your email" onChange={(e) => { setEmail(e.target.value) }} />
 
             <div className="d-flex py-2">
                 <label htmlFor="Password" className="float-left">Password</label>
@@ -43,8 +49,8 @@ export default function SignIn() {
 
             </div>
 
-            <input className="input-box py-2" type="password" placeholder="Enter your password" onChange={(e) => { setPass(e.target.value) }} />
-            <p className="error">{error}Incorrect Error</p>
+            <input className="input-box p-2 my-3 rounded" value={pass} type="password" placeholder="Enter your password" onChange={(e) => { setPass(e.target.value) }} />
+            <p className="error">{error}</p>
             <div className="text-center">
                 <button className="btn btn-primary px-4" onClick={handleSubmit}>Login</button>
             </div>
@@ -53,6 +59,6 @@ export default function SignIn() {
                 <Link to='/signup' className="link-form create-acc">Create an account</Link>
             </div>
 
-        </form>
+        </div>
     )
 }

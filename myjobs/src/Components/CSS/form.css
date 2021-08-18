@@ -16,7 +16,7 @@ label {
 .input-box {
   width: 100%;
   background-color: #dee5ec26;
-  outline-color: #557da526;
+  border: 2px solid #c6c6c6;
 }
 .input-box:focus {
   outline-color: #43afff;

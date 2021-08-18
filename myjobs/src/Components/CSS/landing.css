@@ -1,0 +1,27 @@
+.landing-container {
+  position: absolute;
+  top: 10vh;
+  left: 15%;
+}
+.lady-img {
+  width: 600px;
+  height: 300px;
+}
+.text-color-blue {
+  color: #43afff;
+}
+.card {
+  width: 15rem;
+  margin-right: 15%;
+  margin-top: 3rem;
+}
+
+.landing-comp-img {
+  width: 100px;
+  height: 30px;
+  margin: 2.5rem;
+}
+
+.comp-img {
+  margin-left: -5%;
+}

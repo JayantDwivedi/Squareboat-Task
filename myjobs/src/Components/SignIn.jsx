@@ -5,7 +5,7 @@ import { setUserSession } from "../utils/comman";
 import "./CSS/form.css";
 
 export default function SignIn() {
-  const base_url = process.env.BASE_URL;
+  // const base_url = process.env.BASE_URL;
   const url = "https://jobs-api.squareboat.info/api/v1//auth/login";
 
   const history = useHistory();
@@ -17,7 +17,7 @@ export default function SignIn() {
   const handleSubmit = (props) => {
     if (validate(email, pass)) {
       // alert(email + " " + pass);
-      console.log(base_url);
+      // console.log(base_url);
       // setEmail("");
       // setPass("");
       // setError("");
@@ -92,7 +92,6 @@ export default function SignIn() {
         }}
       />
       <p className="error">{error}</p>
-      <p>Process : {process.env.BASE_URL}</p>
       <div className="text-center">
         <button className="btn btn-primary px-4" onClick={handleSubmit}>
           Login

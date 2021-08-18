@@ -13,8 +13,6 @@ const Signup = () => {
   const [error, setError] = useState();
   const [skills, setSkills] = useState();
 
-  const [recruiter, setRecruiter] = useState();
-
   const emailRegex = /\S+@\S+\.\S+/;
 
   const handleSubmit = () => {
@@ -30,17 +28,20 @@ const Signup = () => {
           skills: skills,
         })
         .then((response) => {
-          console.log(response);
+          setError(response.message);
         })
         .catch((err) => {
-          console.log(err);
+          if (err.code == 422) {
+            setError(err.message);
+          }
+          console.log(err.code);
         });
       setConfirmpass("");
       setPass("");
       setEmail("");
       setName("");
       setSkills("");
-      setError("");
+      // setError("");
     }
   };
 
@@ -60,6 +61,10 @@ const Signup = () => {
       setError("All feild are mandatory");
     } else if (pass !== confirmpass) {
       setError("Both password must be same");
+    } else if (!emailRegex.test(email)) {
+      setError("Invalid email");
+    } else if (pass.length < 6) {
+      setError("Password must be more than 6 character");
     } else {
       return true;
     }

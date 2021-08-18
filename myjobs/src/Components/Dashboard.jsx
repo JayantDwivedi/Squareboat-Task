@@ -24,61 +24,37 @@ export default function Dashboard() {
     fetchAPI();
   }, []);
 
+  // pagination
+  const indexoflastcard = currentpage * postperpage;
+  const indexoffirstcard = indexoflastcard - postperpage;
+  const currentcard = jobs.slice(indexoffirstcard, indexoflastcard);
+  console.log(currentcard);
+
   return (
     <div className="dash-main container">
       <Link to="/" className="text-light">
         <i className="fas fa-home"></i>Home
       </Link>
       <h4 className="text-light my-4">Job posted</h4>
-      <div className="d-flex flex-row">
-        {jobs.map(function (ele) {
+      <div className="d-flex">
+        {currentcard.map(function (ele) {
           return (
-            <div className="job-card p-4 bg-light rounded shadow-sm">
+            <div
+              className="mx-4 float-left p-4 w-75 h-25 bg-light rounded shadow-sm"
+              key={ele.id}
+            >
               <h4>{ele.title}</h4>
               <p>{ele.description}</p>
               <div className="d-flex">
-                <div className="location">{ele.location}</div>
-                <div className="parcipant">paritcipant</div>
+                <div className="location">
+                  <i class="fas fa-map-marker-alt text-primary"></i>
+                  {ele.location}
+                </div>
+                <div className="participant">paritcipant</div>
               </div>
             </div>
           );
         })}
-        {/* Card 2 */}
-        {/* <div className="job-card p-4 bg-light rounded shadow-sm">
-          <h4>UI UX designer</h4>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Perferendis, esse!
-          </p>
-          <div className="d-flex">
-            <div className="location">location</div>
-            <div className="parcipant">paritcipant</div>
-          </div>
-        </div>
-        {/* CArd3 */}
-        <div className="job-card p-4 bg-light rounded shadow-sm">
-          <h4>UI UX designer</h4>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Perferendis, esse!
-          </p>
-          <div className="d-flex">
-            <div className="location">location</div>
-            <div className="parcipant">paritcipant</div>
-          </div>
-        </div>
-        {/* card4 */}
-        <div className="job-card p-4 bg-light rounded shadow-sm">
-          <h4>UI UX designer</h4>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Perferendis, esse!
-          </p>
-          <div className="d-flex">
-            <div className="location">location</div>
-            <div className="parcipant">paritcipant</div>
-          </div>
-        </div>{" "}
       </div>
     </div>
   );

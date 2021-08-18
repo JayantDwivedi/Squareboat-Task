@@ -1,20 +1,22 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Navbar from './Components/Navbar';
-import Main from './Components/Main';
+import Navbar from "./Components/Navbar";
+import Main from "./Components/Main";
+import Home from "./Components/Landing";
 
-import Signin from './Components/SignIn';
-import ForgotPass from './Components/ForgotPass';
-import ResetPass from './Components/ResetPass';
-import Jobpost from './Components/PostJob';
-import Signup from './Components/Signup';
-
+import Signin from "./Components/SignIn";
+import ForgotPass from "./Components/ForgotPass";
+import ResetPass from "./Components/ResetPass";
+import Jobpost from "./Components/PostJob";
+import Signup from "./Components/Signup";
+import Sucess from "./Components/Dashboard";
+import Candidate from "./Components/Cadidatesignup";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router history={Sucess}>
         <Navbar />
         <Main />
 
@@ -24,10 +26,13 @@ function App() {
           {/* <ResetPass/> */}
           {/* <Jobpost/> */}
           {/* <Signup/> */}
-          <Route path="/login" exact component={Signin}/>
-          <Route path="/signup" exact component={Signup}/>
-          <Route path="/forgot-pass" exact component={ForgotPass}/>
-          <Route path="/reset-pass" exact component={ResetPass}/>
+          <Route path="/" exact component={Home} />
+          <Route path="/login" exact component={Signin} />
+          <Route path="/signup" exact component={Signup} />
+          <Route path="/forgot-pass" exact component={ForgotPass} />
+          <Route path="/reset-pass" exact component={ResetPass} />
+          <Route path="/dashboard" exact component={Sucess} />
+          <Route path="/candidate-signup" exact component={Candidate} />
         </Switch>
       </Router>
     </div>

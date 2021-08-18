@@ -1,11 +1,8 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./CSS/form.css";
 
-const Signup = () => {
-  const url = "https://jobs-api.squareboat.info/api/v1/auth/register";
-
+const Candidatesignup = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
@@ -19,22 +16,7 @@ const Signup = () => {
 
   const handleSubmit = () => {
     if (validation(name, email, pass, confirmpass, skills)) {
-      //   alert(name + "," + email + "," + pass + "," + confirmpass + "," + skills);
-      axios
-        .post(url, {
-          email: email,
-          userRole: 0,
-          password: pass,
-          confirmPassword: confirmpass,
-          name: name,
-          skills: skills,
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      alert(name + "," + email + "," + pass + "," + confirmpass + "," + skills);
       setConfirmpass("");
       setPass("");
       setEmail("");
@@ -58,6 +40,8 @@ const Signup = () => {
       skills === ""
     ) {
       setError("All feild are mandatory");
+    } else if (emailRegex.test(email)) {
+      setError("Enter valid email");
     } else if (pass !== confirmpass) {
       setError("Both password must be same");
     } else {
@@ -72,10 +56,10 @@ const Signup = () => {
         <p>
           I am a<sup>*</sup>
         </p>
-        <Link to="/signup" className="btn btn-primary mx-3 active">
+        <Link to="/signup" className="btn btn-primary mx-3 ">
           <i className="fas fa-search"></i>Recruiter
         </Link>
-        <Link to="/candidate-signup" className="btn btn-primary ms-3">
+        <Link to="/candidate-signup" className="btn btn-primary ms-3 active">
           <i className="fas fa-users"></i>Candidate
         </Link>
         <br />
@@ -168,4 +152,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Candidatesignup;

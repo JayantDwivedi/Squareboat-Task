@@ -102,7 +102,7 @@ export default function SignIn() {
       </div>
       <div className="form-end-div">
         <p className="new-job">New to jobs? </p>
-        <Link to="/signup" className="link-form create-acc">
+        <Link to="/signup" className="link-form create-acc px-1">
           Create an account
         </Link>
       </div>

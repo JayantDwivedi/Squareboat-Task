@@ -36,21 +36,23 @@ export default function Dashboard() {
         <i className="fas fa-home"></i>Home
       </Link>
       <h4 className="text-light my-4">Job posted</h4>
-      <div className="d-flex">
+      <div className="">
         {currentcard.map(function (ele) {
           return (
             <div
-              className="mx-4 float-left p-4 w-75 h-25 bg-light rounded shadow-sm"
+              className="m-4 d-inline-block p-4 w-25 h-25 bg-light rounded shadow-sm"
               key={ele.id}
             >
               <h4>{ele.title}</h4>
               <p>{ele.description}</p>
-              <div className="d-flex">
-                <div className="location">
-                  <i class="fas fa-map-marker-alt text-primary"></i>
+              <div className="d-flex justify-content-between">
+                <p className="">
+                  <i className="fas fa-map-marker-alt text-primary px-1"> </i>
                   {ele.location}
-                </div>
-                <div className="participant">paritcipant</div>
+                </p>
+                <Link className="text-dark participants p-2 rounded">
+                  View participant
+                </Link>
               </div>
             </div>
           );

@@ -81,18 +81,18 @@ const Signup = () => {
           I am a<sup>*</sup>
         </p>
         <Link to="/signup" className="btn btn-primary mx-3 active">
-          <i className="fas fa-search"></i>Recruiter
+          <i className="fas fa-search px-2"></i>Recruiter
         </Link>
         <Link to="/candidate-signup" className="btn btn-primary ms-3">
-          <i className="fas fa-users"></i>Candidate
+          <i className="fas fa-users px-2"></i>Candidate
         </Link>
         <br />
-        <label htmlFor="text">
+        <label htmlFor="text" className="py-3">
           Fullname<sup>*</sup>
         </label>
         <input
           type="text"
-          className="input-box p-2 my-3 rounded"
+          className="input-box p-2 my-2 rounded"
           value={name}
           placeholder="Enter your name"
           onChange={(e) => {
@@ -162,7 +162,7 @@ const Signup = () => {
         <p className="error">{error}</p>
         <div className="form-end-div">
           <p className="new-job">New to jobs? </p>
-          <Link to="/login" className="link-form create-acc">
+          <Link to="/login" className="link-form create-acc px-1">
             Login
           </Link>
         </div>

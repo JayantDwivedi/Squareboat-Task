@@ -72,12 +72,15 @@ export default function SignIn() {
         }}
       />
 
-      <div className="d-flex py-2">
-        <label htmlFor="Password" className="float-left">
+      <div className="py-2">
+        <label htmlFor="Password" className="d-inline-block">
           Password
         </label>
 
-        <Link to="/forgot-pass" className=" link-form create-acc">
+        <Link
+          to="/forgot-pass"
+          className="d-inline-block link-form create-acc float-right"
+        >
           Forgot password
         </Link>
       </div>

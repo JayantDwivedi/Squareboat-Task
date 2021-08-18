@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./CSS/form.css";
 
 const Signup = () => {
   const url = "https://jobs-api.squareboat.info/api/v1/auth/register";
+
+  const history = useHistory();
 
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -29,6 +31,13 @@ const Signup = () => {
         })
         .then((response) => {
           setError(response.message);
+          history.push("/login");
+          setConfirmpass("");
+          setPass("");
+          setEmail("");
+          setName("");
+          setSkills("");
+          setError("");
         })
         .catch((err) => {
           if (err.code == 422) {
@@ -36,12 +45,6 @@ const Signup = () => {
           }
           console.log(err.code);
         });
-      setConfirmpass("");
-      setPass("");
-      setEmail("");
-      setName("");
-      setSkills("");
-      // setError("");
     }
   };
 

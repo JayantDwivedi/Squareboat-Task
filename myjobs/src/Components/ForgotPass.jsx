@@ -1,18 +1,39 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { useHistory } from "react-router";
+import { getToken } from "../utils/comman";
 
 import "./CSS/form.css";
 
 export default function ForgotPass() {
+  const history = useHistory();
+
   const [email, setEmail] = useState();
   const [error, setError] = useState();
+  const [tok, setTok] = useState();
 
   const emailRegex = /\S+@\S+\.\S+/;
 
+  const url = `https://jobs-api.squareboat.info/api/v1/auth/resetpassword?email=${email}`;
+
   const handleSubmit = () => {
     if (validate(email)) {
-      console.log(email);
-      setEmail("");
-      setError("");
+      axios
+        .get(url)
+        .then((res) => {
+          console.log(res);
+          setTok(res.data.data.token);
+          history.push({
+            pathname: "/reset-pass",
+            state: { token: tok },
+          });
+          console.log(tok);
+          setEmail("");
+          setError("");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   };
 

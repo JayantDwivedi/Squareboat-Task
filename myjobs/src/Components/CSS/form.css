@@ -29,6 +29,8 @@ label {
 
 .link-form {
   color: #43afff;
+  display: block;
+  float: right;
 }
 
 .link-form:hover {

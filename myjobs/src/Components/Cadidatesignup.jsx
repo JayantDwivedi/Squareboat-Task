@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./CSS/form.css";
 
 const Candidatesignup = () => {
+  const url = "https://jobs-api.squareboat.info/api/v1/auth/register";
+
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
@@ -10,13 +13,34 @@ const Candidatesignup = () => {
   const [error, setError] = useState();
   const [skills, setSkills] = useState();
 
-  const [recruiter, setRecruiter] = useState();
-
   const emailRegex = /\S+@\S+\.\S+/;
 
   const handleSubmit = () => {
     if (validation(name, email, pass, confirmpass, skills)) {
-      alert(name + "," + email + "," + pass + "," + confirmpass + "," + skills);
+      // alert(name + "," + email + "," + pass + "," + confirmpass + "," + skills);
+      axios
+        .post(url, {
+          email: email,
+          userRole: 1,
+          password: pass,
+          confirmPassword: confirmpass,
+          name: name,
+          skills: skills,
+        })
+        .then((response) => {
+          setError(response.message);
+        })
+        .catch((err) => {
+          if (err.code == 422) {
+            setError(err.message);
+          }
+          console.log(err.code);
+        });
+      setConfirmpass("");
+      setPass("");
+      setEmail("");
+      setName("");
+      setSkills("");
       setConfirmpass("");
       setPass("");
       setEmail("");
@@ -40,10 +64,12 @@ const Candidatesignup = () => {
       skills === ""
     ) {
       setError("All feild are mandatory");
-    } else if (emailRegex.test(email)) {
+    } else if (!emailRegex.test(email)) {
       setError("Enter valid email");
     } else if (pass !== confirmpass) {
       setError("Both password must be same");
+    } else if (pass.length < 6) {
+      setError("Password must be more than 6 characters");
     } else {
       return true;
     }

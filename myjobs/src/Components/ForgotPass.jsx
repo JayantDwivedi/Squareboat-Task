@@ -21,13 +21,14 @@ export default function ForgotPass() {
       axios
         .get(url)
         .then((res) => {
-          console.log(res);
-          setTok(res.data.data.token);
+          // console.log(res);
+          console.log(res.data.token);
+          alert(tok);
           history.push({
             pathname: "/reset-pass",
             state: { token: tok },
           });
-          console.log(tok);
+
           setEmail("");
           setError("");
         })

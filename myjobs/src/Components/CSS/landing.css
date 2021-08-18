@@ -5,7 +5,7 @@
 }
 .lady-img {
   width: 600px;
-  height: 300px;
+  height: 350px;
 }
 .text-color-blue {
   color: #43afff;
@@ -20,6 +20,8 @@
   width: 100px;
   height: 30px;
   margin: 2.5rem;
+  text-align: center;
+  display: inline-block;
 }
 
 .comp-img {

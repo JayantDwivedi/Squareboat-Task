@@ -12,6 +12,7 @@ import Jobpost from "./Components/PostJob";
 import Signup from "./Components/Signup";
 import Sucess from "./Components/Dashboard";
 import Candidate from "./Components/Cadidatesignup";
+import { isLoggedin } from "./utils/comman";
 
 function App() {
   return (
@@ -27,12 +28,19 @@ function App() {
           {/* <Jobpost/> */}
           {/* <Signup/> */}
           <Route path="/" exact component={Home} />
-          <Route path="/login" exact component={Signin} />
-          <Route path="/signup" exact component={Signup} />
-          <Route path="/forgot-pass" exact component={ForgotPass} />
-          <Route path="/reset-pass" exact component={ResetPass} />
-          <Route path="/dashboard" exact component={Sucess} />
-          <Route path="/candidate-signup" exact component={Candidate} />
+          {isLoggedin() ? (
+            <>
+              <Route path="/dashboard" exact component={Sucess} />
+            </>
+          ) : (
+            <>
+              <Route path="/login" exact component={Signin} />
+              <Route path="/signup" exact component={Signup} />
+              <Route path="/forgot-pass" exact component={ForgotPass} />
+              <Route path="/reset-pass" exact component={ResetPass} />
+              <Route path="/candidate-signup" exact component={Candidate} />
+            </>
+          )}
         </Switch>
       </Router>
     </div>

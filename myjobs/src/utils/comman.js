@@ -13,11 +13,18 @@ export const getToken = () => {
 // remove the token and user from the session storage
 export const removeUserSession = () => {
   sessionStorage.removeItem("token");
-  sessionStorage.removeItem("user");
 };
 
 // set the token and user from the session storage
 export const setUserSession = (token) => {
   sessionStorage.setItem("token", token);
-  // sessionStorage.setItem('user',JSON.stringify(user));
+};
+
+// if the candidate login
+export const isLoggedin = () => {
+  if (sessionStorage.getItem("token") != undefined) {
+    return true;
+  } else {
+    return false;
+  }
 };

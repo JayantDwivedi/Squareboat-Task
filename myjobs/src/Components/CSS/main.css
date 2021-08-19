@@ -6,3 +6,10 @@
   background-color: #edf6ff;
   height: 120vh;
 }
+
+@media (max-width: 640px) {
+  .light {
+    background-color: #edf6ff;
+    height: 230vh;
+  }
+}

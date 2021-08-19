@@ -55,3 +55,21 @@ sup {
 .participants {
   background-color: #43afff33;
 }
+.link-btn {
+  margin-left: 20px;
+}
+@media (max-width: 600px) {
+  .main-body {
+    position: absolute;
+    width: 55%;
+    top: 20%;
+    left: 20%;
+    padding: 3%;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 2px 2px 2px rgb(216, 213, 213);
+  }
+  .link-btn {
+    margin-left: 10px;
+  }
+}

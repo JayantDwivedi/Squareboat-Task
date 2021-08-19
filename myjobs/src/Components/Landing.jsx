@@ -40,7 +40,7 @@ const Landing = () => {
         <h4 className="my-3">Why us</h4>
       </div>
 
-      <div className="row">
+      <div className="row card-row">
         <div className="col-lg-4 p-4 card">
           <h4 className="text-color-blue">Get More Visibility</h4>
           <p className="text-justify">
@@ -67,7 +67,7 @@ const Landing = () => {
       <h4 className="my-4 py-4">Componies who trust us</h4>
       <div className="comp-img">
         <div className="d-flex justify-content-evenly">
-          <img className="landing-comp-img " src={solaytic} alt="liva" />
+          <img className="landing-comp-img" src={solaytic} alt="liva" />
           <img className="landing-comp-img " src={kanba} alt="liva" />
           <img className="landing-comp-img " src={hexa} alt="liva" />
           <img className="landing-comp-img " src={ztos} alt="liva" />

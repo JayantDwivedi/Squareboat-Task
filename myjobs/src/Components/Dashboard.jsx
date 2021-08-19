@@ -9,7 +9,7 @@ export default function Dashboard() {
   const url = "https://jobs-api.squareboat.info/api/v1/jobs";
 
   const [currentpage, setCurrentpage] = useState(1);
-  const [postperpage, setPostperpage] = useState(9);
+  const [postperpage, setPostperpage] = useState(7);
   const [jobs, setJobs] = useState([]);
   const [vaccancy, setVaccancy] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -61,7 +61,7 @@ export default function Dashboard() {
           {currentcard.map(function (ele) {
             return (
               <div
-                className="m-4 d-inline-block p-4 w-25 h-25 bg-light rounded shadow-sm"
+                className="m-4 p-4 bg-light rounded shadow-sm job-card"
                 key={ele.id}
               >
                 <h4>{ele.title}</h4>
@@ -101,7 +101,11 @@ export default function Dashboard() {
                             aria-label="Close"
                           ></button>
                         </div>
-                        <div className="modal-body bg-light m-4"></div>
+                        <div className="modal-body bg-light m-4">
+                          <h3 className="text-center">No applicant applied</h3>
+                          <br />
+                          <i className="fa fa-file-alt icon"></i>
+                        </div>
                         <div className="modal-footer">
                           <button
                             type="button"

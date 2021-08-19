@@ -80,10 +80,10 @@ const Signup = () => {
         <p>
           I am a<sup>*</sup>
         </p>
-        <Link to="/signup" className="btn btn-primary mx-3 active">
+        <Link to="/signup" className="btn btn-primary active link-btn">
           <i className="fas fa-search px-2"></i>Recruiter
         </Link>
-        <Link to="/candidate-signup" className="btn btn-primary ms-3">
+        <Link to="/candidate-signup" className="btn btn-primary link-btn">
           <i className="fas fa-users px-2"></i>Candidate
         </Link>
         <br />

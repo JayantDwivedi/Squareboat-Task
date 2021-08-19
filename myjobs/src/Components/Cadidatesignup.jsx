@@ -85,19 +85,22 @@ const Candidatesignup = () => {
         <p>
           I am a<sup>*</sup>
         </p>
-        <Link to="/signup" className="btn btn-primary mx-3 ">
-          <i className="fas fa-search"></i>Recruiter
+        <Link to="/signup" className="btn btn-primary link-btn ">
+          <i className="fas fa-search mx-2"></i>Recruiter
         </Link>
-        <Link to="/candidate-signup" className="btn btn-primary ms-3 active">
-          <i className="fas fa-users"></i>Candidate
+        <Link
+          to="/candidate-signup"
+          className="btn btn-primary link-btn active"
+        >
+          <i className="fas fa-users mx-2"></i>Candidate
         </Link>
         <br />
-        <label htmlFor="text">
+        <label htmlFor="text" className="py-3">
           Fullname<sup>*</sup>
         </label>
         <input
           type="text"
-          className="input-box p-2 my-3 rounded"
+          className="input-box p-2 my-2 rounded"
           value={name}
           placeholder="Enter your name"
           onChange={(e) => {

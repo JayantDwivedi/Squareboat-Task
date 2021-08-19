@@ -28,11 +28,11 @@
   margin-left: -5%;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .landing-container {
     position: absolute;
     top: 10vh;
-    left: 5%;
+    left: 25%;
   }
   .lady-img {
     width: 300px;

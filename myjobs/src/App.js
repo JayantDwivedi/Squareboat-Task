@@ -31,6 +31,7 @@ function App() {
           {isLoggedin() ? (
             <>
               <Route path="/dashboard" exact component={Sucess} />
+              <Route path="/dashboard/jobpost" exact component={Jobpost} />
             </>
           ) : (
             <>

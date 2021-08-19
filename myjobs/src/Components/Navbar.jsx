@@ -10,7 +10,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setBtntext("Logout");
-  }, [loginstate]);
+  }, []);
 
   return (
     <>
@@ -20,17 +20,29 @@ export default function Navbar() {
             My<span className="light-blue">Jobs</span>
           </Link>
           {loginstate ? (
-            <Link to="/" class="d-flex">
-              <button className="btn" onClick={removeUserSession}>
-                {loginstate ? "Logout" : "Login/Signup"}
-              </button>
-            </Link>
+            <>
+              {loginstate && (
+                <Link to="/dashboard/jobpost" class="d-flex">
+                  <button className="btn">
+                    {loginstate ? "Jobpost" : "Login/Signup"}
+                  </button>
+                </Link>
+              )}
+
+              <Link to="/" class="d-flex">
+                <button className="btn" onClick={removeUserSession}>
+                  {loginstate ? "Logout" : "Login/Signup"}
+                </button>
+              </Link>
+            </>
           ) : (
-            <Link to="/login" class="d-flex">
-              <button className="btn">
-                {loginstate ? "Logout" : "Login/Signup"}
-              </button>
-            </Link>
+            <>
+              <Link to="/login" class="d-flex">
+                <button className="btn">
+                  {loginstate ? "Logout" : "Login/Signup"}
+                </button>
+              </Link>
+            </>
           )}
         </div>
       </nav>

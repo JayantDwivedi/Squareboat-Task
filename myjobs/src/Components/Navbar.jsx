@@ -2,8 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./CSS/navbar.css";
 import { isLoggedin, removeUserSession } from "../utils/comman";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [loginstate, setLoginstate] = useState(isLoggedin());
+  const [btntext, setBtntext] = useState("Login/Signup");
+
+  useEffect(() => {
+    setBtntext("Logout");
+  }, [loginstate]);
+
   return (
     <>
       <nav class="navbar">
@@ -11,13 +19,17 @@ export default function Navbar() {
           <Link to="/" class="navbar-brand">
             My<span className="light-blue">Jobs</span>
           </Link>
-          {isLoggedin() ? (
+          {loginstate ? (
             <Link to="/" class="d-flex">
-              <button className="btn">Logout</button>
+              <button className="btn" onClick={removeUserSession}>
+                {loginstate ? "Logout" : "Login/Signup"}
+              </button>
             </Link>
           ) : (
             <Link to="/login" class="d-flex">
-              <button className="btn">Login/Signup</button>
+              <button className="btn">
+                {loginstate ? "Logout" : "Login/Signup"}
+              </button>
             </Link>
           )}
         </div>

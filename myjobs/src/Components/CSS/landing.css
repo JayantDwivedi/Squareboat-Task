@@ -26,6 +26,9 @@
 
 .comp-img {
   margin-left: -5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {

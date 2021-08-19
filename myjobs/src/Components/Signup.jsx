@@ -19,7 +19,6 @@ const Signup = () => {
 
   const handleSubmit = () => {
     if (validation(name, email, pass, confirmpass, skills)) {
-      //   alert(name + "," + email + "," + pass + "," + confirmpass + "," + skills);
       axios
         .post(url, {
           email: email,

@@ -66,19 +66,15 @@ const Landing = () => {
 
       <h4 className="my-4 py-4">Componies who trust us</h4>
       <div className="comp-img">
-        <div className="d-flex justify-content-evenly">
-          <img className="landing-comp-img" src={solaytic} alt="liva" />
-          <img className="landing-comp-img " src={kanba} alt="liva" />
-          <img className="landing-comp-img " src={hexa} alt="liva" />
-          <img className="landing-comp-img " src={ztos} alt="liva" />
-          <img className="landing-comp-img " src={amara} alt="liva" />
-        </div>
-        <div className="d-flex justify-content-evenly">
-          <img className="landing-comp-img" src={goldline} alt="liva" />
-          <img className="landing-comp-img" src={ideaa} alt="liva" />
-          <img className="landing-comp-img" src={liva} alt="liva" />
-          <img className="landing-comp-img" src={velocity9} alt="liva" />
-        </div>
+        <img className="landing-comp-img" src={solaytic} alt="liva" />
+        <img className="landing-comp-img " src={kanba} alt="liva" />
+        <img className="landing-comp-img " src={hexa} alt="liva" />
+        <img className="landing-comp-img " src={ztos} alt="liva" />
+        <img className="landing-comp-img " src={amara} alt="liva" />
+        <img className="landing-comp-img" src={goldline} alt="liva" />
+        <img className="landing-comp-img" src={ideaa} alt="liva" />
+        <img className="landing-comp-img" src={liva} alt="liva" />
+        <img className="landing-comp-img" src={velocity9} alt="liva" />
       </div>
     </div>
   );

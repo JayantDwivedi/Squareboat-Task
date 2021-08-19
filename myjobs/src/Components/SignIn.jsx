@@ -16,11 +16,6 @@ export default function SignIn() {
 
   const handleSubmit = (props) => {
     if (validate(email, pass)) {
-      // alert(email + " " + pass);
-      // console.log(base_url);
-      // setEmail("");
-      // setPass("");
-      // setError("");
       axios
         .post(url, { email: email, password: pass })
         .then((response) => {

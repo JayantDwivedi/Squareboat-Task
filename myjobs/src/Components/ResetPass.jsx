@@ -15,7 +15,6 @@ const ResetPass = () => {
 
   const handleSubmit = () => {
     if (validate(newpass, confirmpass)) {
-      alert(newpass + " " + confirmpass);
       setError("");
       setConfirmpass("");
       setNewpass("");

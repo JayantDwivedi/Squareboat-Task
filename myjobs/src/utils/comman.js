@@ -15,7 +15,7 @@ export const setUserSession = (token) => {
 
 // if the candidate login
 export const isLoggedin = () => {
-  if (sessionStorage.getItem("token") != undefined) {
+  if (sessionStorage.getItem("token") != null) {
     return true;
   } else {
     return false;

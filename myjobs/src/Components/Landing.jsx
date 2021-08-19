@@ -71,6 +71,8 @@ const Landing = () => {
         <img className="landing-comp-img " src={hexa} alt="liva" />
         <img className="landing-comp-img " src={ztos} alt="liva" />
         <img className="landing-comp-img " src={amara} alt="liva" />
+      </div>
+      <div className="comp-img">
         <img className="landing-comp-img" src={goldline} alt="liva" />
         <img className="landing-comp-img" src={ideaa} alt="liva" />
         <img className="landing-comp-img" src={liva} alt="liva" />

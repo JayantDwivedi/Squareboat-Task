@@ -19,16 +19,17 @@
 .landing-comp-img {
   width: 100px;
   height: 30px;
-  margin: 2.5rem;
+  margin: 0.5rem;
   text-align: center;
   display: inline-block;
 }
 
 .comp-img {
-  margin-left: -5%;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  margin-top: 2 rem;
 }
 
 @media (max-width: 600px) {

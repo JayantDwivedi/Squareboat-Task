@@ -27,3 +27,24 @@
 .comp-img {
   margin-left: -5%;
 }
+
+@media (max-width: 640px) {
+  .landing-container {
+    position: absolute;
+    top: 10vh;
+    left: 5%;
+  }
+  .lady-img {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+  }
+  .landing-comp-img {
+    width: 50px;
+    height: 30px;
+    margin: 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
